@@ -7,13 +7,13 @@
  Sample Pseudo Code
 
 		char TxStr[50];
-		HDC_Config();
-		HDC_Read_Temperature();
-		snprintf(TxStr, 13, "Temp=%f4.2\n\0", HDC_Read_Temperature());
-		Uart1Write(TxStr);
-		snprintf(TxStr, 13, "Humd=%f4.2\n\0", HDC_Read_Humidty());
-		Uart1Write(TxStr);
 
+		TWI_Init();
+		HDC_Config();		
+		snprintf(TxStr, 13, "Temp=%f4.2\n", HDC_Read_Temperature());
+		Uart1Write(TxStr);
+		snprintf(TxStr, 13, "Humd=%f4.2\n", HDC_Read_Humidty());
+		Uart1Write(TxStr);
 
  */ 
 
